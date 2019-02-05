@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>date</title>
+</head>
+<body>
+  <script type="text/javascript">
+    window.addEventListener( "load", function () {
+      today = new Date();
+      yyyy = today.getFullYear();
+      mm = today.getMonth() + 1;
+      dd = today.getDate();
+
+      //年
+      $Year = '<select>';
+      for ( var i = 2019; i < 2025; i++ ) {
+        if ( i == yyyy ) {
+          $Year += "<option value=\"" + i + "\" selected >" + i + "</option>";
+        } else {
+          $Year += "<option value=\"" + i + "\" >" + i + "</option>";
+        }
+      }
+      $Year += "</select>";
+      document.getElementById( "Year" ).innerHTML = $Year;
+
+      //月
+      $Month = "<select>";
+      for ( var i = 1; i <= 12; i++ ) {
+        if ( i == mm ) {
+          $Month += "<option value=\"" + i + "\" selected >" + i + "</option>";
+        } else {
+          $Month += "<option value=\"" + i + "\" >" + i + "</option>";
+        }
+      }
+      $Month += "</select>";
+      document.getElementById( "Month" ).innerHTML = $Month;
+
+      //日付
+      $Day = "<select>";
+      for ( var i = 1; i <= 31; i++ ) {
+        if ( i == dd ) {
+          $Day += "<option value=\"" + i + "\" selected >" + i + "</option>";
+        } else {
+          $Day += "<option value=\"" + i + "\" >" + i + "</option>";
+        }
+      }
+      $Day += "</select>";
+      document.getElementById( "Day" ).innerHTML = $Day;
+    }, false )
+  </script>
+
+  <select name="Year" id="Year"></select>年
+  <select name="Month" id="Month"></select>月
+  <select name="Day" id="Day"></select>日
+</body>
+</html>
